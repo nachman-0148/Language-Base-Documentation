@@ -61,3 +61,59 @@ The fundamental building block in Singularity is the **function vector**, repres
 ```singularity
 // A simple function vector executing three functions in order
 [initializeSystem, loadConfiguration, startApplication]
+```
+
+// Basic Function Vector
+[func1, func2, func3]
+
+// Function Call with Parameters
+[functionWithParams{param1: "value", param2: 123}, anotherFunction]
+
+// Nested Function Vectors
+[
+    doSomething,
+    [
+        subTaskA,
+        subTaskB{option: true}
+    ],
+    finishUp
+]
+
+// Example 1: Daily Routine Automation
+[
+    WhenIWakeUpMakeTeaWith{type: "black", sugar: 2, milk: "none"},
+    ThenGoToWork,
+    WhenItsLunchTimeEat{meal: "salad", restaurant: "local_deli"},
+    ReturnHome,
+    PrepareDinner{cuisine: "italian", main_ingredient: "pasta"},
+    GoToSleep
+]
+
+// Example 2: Conditional Logic
+[
+    IfTimeIs{now: "09:00"}, callMom,
+    IfTimeIs{now: "17:00"}, [sendDailyReport, shutdownComputer]
+]
+
+// Example 3: Defining and Calling Custom Functions (Conceptual)
+// The actual syntax for defining such functions within Singularity
+// is part of future language design.
+[
+    greet{name: "Alice", timeOfDay: "morning"},
+    greet{name: "Bob", timeOfDay: "evening"}
+]
+
+// --- Conceptual JavaScript Transpilation Example ---
+// Singularity: [WhenIWakeUpMakeTeaWith{type: "black", sugar: 2, milk: "none"}, ThenGoToWork]
+// Transpiles to JavaScript:
+async function runSequence() {
+    await WhenIWakeUpMakeTeaWith({ type: "black", sugar: 2, milk: "none" });
+    await ThenGoToWork();
+}
+// runSequence(); // Would be called to execute
+
+// --- Conceptual Transpiler Usage Command ---
+// singularity transpile my_program.sg -o my_program.js
+
+// --- Conceptual Execution Command ---
+// node my_program.js
