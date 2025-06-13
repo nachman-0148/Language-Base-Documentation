@@ -17,8 +17,10 @@ In Singularity, programs are primarily composed of **function vectors**, represe
 
 ```singularity
 [func1, func2, func3]
-
+```
 
 
 ## Enter Web3
 https://g.co/gemini/share/e9a8771569ad
+
+https://m.youtube.com/watch?v=Nt2_QFezLmU
