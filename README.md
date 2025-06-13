@@ -75,5 +75,12 @@ async function runSequence() {
 // node my_program.js
 
 
+
+### Future Directions
+
+Singularity is continuously evolving! We're actively working on expanding its capabilities, including more advanced control flow mechanisms, robust error handling, and a more comprehensive standard library. Your ideas and contributions are highly valued as we shape the future of this unique language.
+
+---
+
 @Gemini@Google@CoDEV
 https://g.co/gemini/share/ee9cac294ba9
